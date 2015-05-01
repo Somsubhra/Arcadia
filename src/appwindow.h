@@ -17,6 +17,8 @@ public:
     ViewPort* viewPort();
     AppBar* appBar();
 
+    ActionCollection* actionCollection();
+
 signals:
 
 public slots:

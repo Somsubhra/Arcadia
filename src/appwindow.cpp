@@ -44,3 +44,8 @@ AppBar* AppWindow::appBar()
 {
     return m_appBar;
 }
+
+ActionCollection* AppWindow::actionCollection()
+{
+    return m_actionCollection;
+}
