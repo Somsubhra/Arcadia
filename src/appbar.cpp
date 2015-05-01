@@ -3,6 +3,7 @@
 
 #include <QLineEdit>
 #include <QGridLayout>
+#include <QToolBar>
 
 AppBar::AppBar(AppWindow *appWindow)
     : QWidget(appWindow)
@@ -11,8 +12,15 @@ AppBar::AppBar(AppWindow *appWindow)
 
     QGridLayout* mainLayout = new QGridLayout(this);
 
+    QToolBar* browserControlsBar = new QToolBar(this);
+    browserControlsBar->addAction(m_appWindow->actionCollection()->action("back"));
+    browserControlsBar->addAction(m_appWindow->actionCollection()->action("forward"));
+    browserControlsBar->addAction(m_appWindow->actionCollection()->action("load"));
+
+    mainLayout->addWidget(browserControlsBar, 0, 0);
+
     m_urlBar = new UrlBar(this);
-    mainLayout->addWidget(m_urlBar);
+    mainLayout->addWidget(m_urlBar, 0, 1);
 
     setLayout(mainLayout);
 }

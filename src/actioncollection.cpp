@@ -28,7 +28,7 @@ void ActionCollection::addAction(QString key, QAction *action)
 QAction* ActionCollection::action(QString key)
 {
     if(m_actions->contains(key)) {
-        return m_actions->value("key");
+        return m_actions->value(key);
     } else {
         return 0;
     }
