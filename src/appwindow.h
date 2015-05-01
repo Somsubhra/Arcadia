@@ -4,6 +4,7 @@
 #include "viewport.h"
 #include "appbar.h"
 #include "actioncollection.h"
+#include "standardactions.h"
 
 #include <QMainWindow>
 
@@ -18,6 +19,7 @@ public:
     AppBar* appBar();
 
     ActionCollection* actionCollection();
+    StandardActions* standardActions();
 
 signals:
 
@@ -26,7 +28,9 @@ public slots:
 private:
     ViewPort* m_viewPort;
     AppBar* m_appBar;
+
     ActionCollection* m_actionCollection;
+    StandardActions* m_standardActions;
 };
 
 #endif // APPWINDOW_H

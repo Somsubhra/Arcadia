@@ -10,6 +10,9 @@ AppWindow::AppWindow(QWidget *parent)
 
     m_actionCollection = new ActionCollection(this);
 
+    m_standardActions = new StandardActions(this);
+    m_standardActions->createStandardActions();
+
     m_viewPort = new ViewPort(this);
     m_appBar = new AppBar(this);
 
@@ -33,6 +36,9 @@ AppWindow::~AppWindow()
 
     delete m_actionCollection;
     m_actionCollection = 0;
+
+    delete m_standardActions;
+    m_standardActions = 0;
 }
 
 ViewPort* AppWindow::viewPort()
@@ -48,4 +54,9 @@ AppBar* AppWindow::appBar()
 ActionCollection* AppWindow::actionCollection()
 {
     return m_actionCollection;
+}
+
+StandardActions* AppWindow::standardActions()
+{
+    return m_standardActions;
 }
