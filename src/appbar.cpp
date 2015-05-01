@@ -22,6 +22,11 @@ AppBar::AppBar(AppWindow *appWindow)
     m_urlBar = new UrlBar(this);
     mainLayout->addWidget(m_urlBar, 0, 1);
 
+    QToolBar* menuBar = new QToolBar(this);
+    menuBar->addAction(m_appWindow->actionCollection()->action("menu"));
+
+    mainLayout->addWidget(menuBar, 0, 2);
+
     setLayout(mainLayout);
 }
 

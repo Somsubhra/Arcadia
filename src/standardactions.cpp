@@ -47,4 +47,8 @@ void StandardActions::createStandardActions()
     exitAction->setShortcut(QKeySequence("Ctrl+Q"));
     m_appWindow->actionCollection()->addAction("exit", exitAction);
     connect(exitAction, SIGNAL(triggered()), m_actionHandlers, SLOT(slotExit()));
+
+    QAction* menuAction = new QAction(m_appWindow->style()->standardIcon(QStyle::SP_ToolBarVerticalExtensionButton),
+                                      tr("Menu"), m_appWindow);
+    m_appWindow->actionCollection()->addAction("menu", menuAction);
 }
