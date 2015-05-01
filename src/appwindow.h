@@ -3,6 +3,7 @@
 
 #include "viewport.h"
 #include "appbar.h"
+#include "actioncollection.h"
 
 #include <QMainWindow>
 
@@ -23,6 +24,7 @@ public slots:
 private:
     ViewPort* m_viewPort;
     AppBar* m_appBar;
+    ActionCollection* m_actionCollection;
 };
 
 #endif // APPWINDOW_H

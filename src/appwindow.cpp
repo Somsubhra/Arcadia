@@ -8,6 +8,8 @@ AppWindow::AppWindow(QWidget *parent)
     setWindowTitle("Arcardia");
     setWindowState(Qt::WindowMaximized);
 
+    m_actionCollection = new ActionCollection(this);
+
     m_viewPort = new ViewPort(this);
     m_appBar = new AppBar(this);
 
@@ -28,6 +30,9 @@ AppWindow::~AppWindow()
 
     delete m_appBar;
     m_appBar = 0;
+
+    delete m_actionCollection;
+    m_actionCollection = 0;
 }
 
 ViewPort* AppWindow::viewPort()
