@@ -3,11 +3,25 @@
 
 #include <QLineEdit>
 
+class AppBar;
+
 class UrlBar : public QLineEdit
 {
+    Q_OBJECT
 public:
-    UrlBar(QWidget* parent = 0);
+    UrlBar(AppBar* appBar = 0);
     ~UrlBar();
+
+    AppBar* appBar();
+
+signals:
+    void sigUrlEntered();
+
+public slots:
+    void slotUrlEntered();
+
+private:
+    AppBar* m_appBar;
 };
 
 #endif // URLBAR_H

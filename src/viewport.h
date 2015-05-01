@@ -7,11 +7,15 @@ class AppWindow;
 
 class ViewPort : public QWebEngineView
 {
+    Q_OBJECT
 public:
     ViewPort(AppWindow* appWindow);
     ~ViewPort();
 
     AppWindow* appWindow();
+
+public slots:
+    void slotLoadUrl(QString url);
 
 private:
     AppWindow* m_appWindow;

@@ -17,3 +17,8 @@ AppWindow* ViewPort::appWindow()
 {
     return m_appWindow;
 }
+
+void ViewPort::slotLoadUrl(QString url)
+{
+    load(QUrl(url));
+}
