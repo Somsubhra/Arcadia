@@ -2,6 +2,7 @@
 #define APPWINDOW_H
 
 #include "viewport.h"
+#include "appbar.h"
 
 #include <QMainWindow>
 
@@ -13,6 +14,7 @@ public:
     ~AppWindow();
 
     ViewPort* viewPort();
+    AppBar* appBar();
 
 signals:
 
@@ -20,6 +22,7 @@ public slots:
 
 private:
     ViewPort* m_viewPort;
+    AppBar* m_appBar;
 };
 
 #endif // APPWINDOW_H
