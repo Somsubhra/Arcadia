@@ -20,17 +20,17 @@ StandardActions* ActionHandlers::standardActions()
 
 void ActionHandlers::slotBack()
 {
-
+    m_standardActions->appWindow()->viewPort()->back();
 }
 
 void ActionHandlers::slotForward()
 {
-
+    m_standardActions->appWindow()->viewPort()->forward();
 }
 
 void ActionHandlers::slotLoad()
 {
-
+    m_standardActions->appWindow()->viewPort()->reload();
 }
 
 void ActionHandlers::slotExit()
