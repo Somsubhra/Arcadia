@@ -1,4 +1,5 @@
 #include "appwindow.h"
+#include "urlbar.h"
 
 #include <QGridLayout>
 
@@ -24,6 +25,8 @@ AppWindow::AppWindow(QWidget *parent)
 
     mainWidget->setLayout(mainLayout);
     setCentralWidget(mainWidget);
+
+    setupConnections();
 }
 
 AppWindow::~AppWindow()
@@ -39,6 +42,13 @@ AppWindow::~AppWindow()
 
     delete m_standardActions;
     m_standardActions = 0;
+}
+
+void AppWindow::setupConnections()
+{
+    connect(m_appBar->urlBar(), SIGNAL(sigUrlEntered(QString)), m_viewPort, SLOT(slotLoadUrl(QString)));
+    connect(m_viewPort, SIGNAL(titleChanged(QString)), this, SLOT(setWindowTitle(QString)));
+    connect(m_viewPort, SIGNAL(urlChanged(QUrl)), m_appBar->urlBar(), SLOT(slotSetUrl(QUrl)));
 }
 
 ViewPort* AppWindow::viewPort()

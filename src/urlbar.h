@@ -2,6 +2,7 @@
 #define URLBAR_H
 
 #include <QLineEdit>
+#include <QUrl>
 
 class AppBar;
 
@@ -15,9 +16,12 @@ public:
     AppBar* appBar();
 
 signals:
-    void sigUrlEntered();
+    void sigUrlEntered(QString);
 
 public slots:
+    void slotSetUrl(QUrl url);
+
+private slots:
     void slotUrlEntered();
 
 private:

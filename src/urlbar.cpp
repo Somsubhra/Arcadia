@@ -1,7 +1,5 @@
 #include "urlbar.h"
 #include "appbar.h"
-#include "appwindow.h"
-#include "viewport.h"
 
 UrlBar::UrlBar(AppBar *appBar)
     : QLineEdit(appBar)
@@ -22,8 +20,12 @@ AppBar* UrlBar::appBar()
     return m_appBar;
 }
 
+void UrlBar::slotSetUrl(QUrl url)
+{
+    setText(url.toString());
+}
+
 void UrlBar::slotUrlEntered()
 {
-    emit sigUrlEntered();
-    m_appBar->appWindow()->viewPort()->slotLoadUrl(text());
+    emit sigUrlEntered(text());
 }

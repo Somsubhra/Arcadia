@@ -26,6 +26,9 @@ signals:
 public slots:
 
 private:
+    void setupConnections();
+
+private:
     ViewPort* m_viewPort;
     AppBar* m_appBar;
 
